@@ -1,0 +1,62 @@
+div.titulo{
+   text-align: center;
+    background-color: rgba(72, 117, 133, 0.658);
+  
+}
+
+
+
+#contenedorPeliculas{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr  ;
+    background-color: rgba(71, 137, 137, 0.68);
+    gap: 20px;
+  
+ 
+   
+
+} 
+div .contPeli {
+    
+    margin-top: 20px;
+
+  text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+
+}
+button .btn-btn-primary{
+  margin-bottom: 5px;
+  
+}
+
+
+a{
+  margin: 10px;
+}
+
+h1{ font-size: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:rgb(97, 93, 86);
+    padding: 5px;
+    
+   
+    
+}
+
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(100, 89, 77);
+    padding: 5px;
+    
+}
+
+img.img-thumbnail{
+    width: 450px;
+    
+  }
+
+  .container-fluid{
+    background-color:rgba(114, 154, 154, 0.68) ;
+  }
