@@ -29,57 +29,59 @@ onclick="document.getElementById('formPelicula').reset();">
     Agregar Películas
   </button>
   
-  <!-- Modal -->
-  <div class="modal fade" id="agregarEditarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar/Editar</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-           
-        </div>
-        <div class="modal-body">
-            <form method="post" id ="formPelicula" onsubmit="return false;">
-                <input type="hidden" name="txtIdPelicula" Id=" txtIdPelicula" >             
-                <div class="mb-3">
-                    <label for="txtNombre" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" id="txtNombre" name="txtNombre">
-                </div>
-                <div class="mb-3">
-                    <label for="txtGenero" class="form-label">Genero:</label>
-                    <input type="text" class="form-control" id="txtGenero" name="txtGenero">
-                </div>
-                <div class="mb-3">
-                    <label for="txtDuracion" class="form-label">Duración:</label>
-                    <input type="text" class="form-control" id="txtDuracion" name="txtDuracion">
-                </div>
-                <div class="mb-3">
-                    <label for="txtTrailerUrl" class="form-label">Url del trailer:</label>
-                    <input type="text" class="form-control" id="txtTrailerUrl" name="txtTrailerUrl">
-                </div>
-                <div class="mb-3">
-                    <label for="txtSinopsis" class="form-label">Sinopsis:</label>
-                    <textarea rows="4" class="form-control" id="txtSinopsis" name="txtSinopsis"></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="txtPortadaUrl" class="form-label">Url imagen de portada:</label>
-                    <input type="text" class="form-control" id="txtPortadaUrl" name="txtPortadaUrl">
-                </div>
-               
-            </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary" onclick="movies.agregarNuevaPelicula();">Guardar los cambios</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  
+  
 
                <!-- Contenedor principal películas -->
     <div id="contenedorPeliculas"> </div>
 
+               <!-- Modal -->
+
+    <div class="modal fade" id="agregarEditarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar/Editar</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             
+          </div>
+          <div class="modal-body">
+              <form method="post" id ="formPelicula" onsubmit="return false;">
+                  <input type="hidden" name="txtIdPelicula" Id="txtIdPelicula" >             
+                  <div class="mb-3">
+                      <label for="txtNombre" class="form-label">Nombre:</label>
+                      <input type="text" class="form-control" id="txtNombre" name="txtNombre">
+                  </div>
+                  <div class="mb-3">
+                      <label for="txtGenero" class="form-label">Genero:</label>
+                      <input type="text" class="form-control" id="txtGenero" name="txtGenero">
+                  </div>
+                  <div class="mb-3">
+                      <label for="txtDuracion" class="form-label">Duración:</label>
+                      <input type="text" class="form-control" id="txtDuracion" name="txtDuracion">
+                  </div>
+                  <div class="mb-3">
+                      <label for="txtTrailerUrl" class="form-label">Url del trailer:</label>
+                      <input type="text" class="form-control" id="txtTrailerUrl" name="txtTrailerUrl">
+                  </div>
+                  <div class="mb-3">
+                      <label for="txtSinopsis" class="form-label">Sinopsis:</label>
+                      <textarea rows="4" class="form-control" id="txtSinopsis" name="txtSinopsis"></textarea>
+                  </div>
+                  <div class="mb-3">
+                      <label for="txtPortadaUrl" class="form-label">Url imagen de portada:</label>
+                      <input type="text" class="form-control" id="txtPortadaUrl" name="txtPortadaUrl">
+                  </div>
+                 
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" onclick="movies.agregarNuevaPelicula();">Guardar los cambios</button>
+          </div>
+        </div>
+      </div>
+    </div>
   
         
    
