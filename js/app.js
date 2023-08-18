@@ -78,7 +78,7 @@ methodAPI = 'POST';
       };
 
       fetch(urlAPI,{
-      methodAPI: 'POST',
+      method: methodAPI,
       headers: {
         'Content-Type': 'application/json'
       },
@@ -89,7 +89,7 @@ methodAPI = 'POST';
         window.location.href="index.html";
         //return movies.obtenerTodos();
       })
-      alert(`Haz agregado la película : ${nuevaPeli.nombre} ` );
+      //alert(`Haz agregado la película : ${nuevaPeli.nombre} ` );
     },
 
 
