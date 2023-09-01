@@ -30,8 +30,7 @@ console.log(auth);
 
 console.log(app);
 
-onAuthStateChanged(auth, async (user)=> {
-  console.log('Hubo un cambio de estado en el login');
-  console.log(user);
+onAuthStateChanged(auth, async (user)=>{
   loginCheck(user);
+  
 })
