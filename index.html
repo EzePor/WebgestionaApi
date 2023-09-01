@@ -6,22 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion de Peliculas - Api</title>
 
-                    <!-- CSS -->
+                          <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
-      <!-- JAVASCRIPT -->
+                         <!-- JAVASCRIPT -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer ></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
-    <script type="module" src="js/firebase.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer ></script>
+    <script type="module" src="js/firebase.js" defer ></script>
+    <script type="module" src="js/loginCheck.js" defer ></script>
+    <script type="module" src="js/cerraSesion.js" defer ></script>
 
     <script  src="js/app.js" defer ></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer ></script>
 
     <script type="module" src="js/formRegistro.js" defer ></script>
+    <script type="module" src="js/formIniciarSesion.js" defer ></script>
+    <script type="module" src="js/loginGoogle.js" defer ></script>
+    <script type="module" src="js/loginFacebook.js" defer ></script>
+    <script type="module" src="js/loginGitHub.js" defer ></script>
 
 
 
@@ -41,12 +47,16 @@
         <ul class="navbar-nav ms-auto">
           
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#inicarSesionModal">Iniciar Sesión</a>
+          <li class="nav-item ">
+            <a class="nav-link desconectado "href="#" data-bs-toggle="modal" data-bs-target="#iniciarSesionModal">Iniciar Sesión</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registrarseModal">Registrarse</a>
+          <li class="nav-item ">
+            <a class="nav-link desconectado" href="#" data-bs-toggle="modal" data-bs-target="#registrarseModal">Registrarse</a>
           </li>
+          <li class="nav-item ">
+            <a class="nav-link conectado"  id="cerrarSesionMenu" href="#" data-bs-toggle="modal" data-bs-target="#cerrarSesionModal">Cerrar sesión</a>
+          </li>
+          
          
         </ul>
       </div>
@@ -136,20 +146,29 @@ onclick="document.getElementById('formPelicula').reset();">
     </div>
 
     <!-- Modal iniciar sesión-->
-    <div class="modal fade" id="inicarSesionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="iniciarSesionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Iniciar Sesión</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">❌</button>
           </div>
           <div class="modal-body">
-            ...
+
+            <form id="formIniciarSesion" >
+              <label for="txtEmail"  >Email:</label>
+              <input type="email"  name="txtEmail" id="txtEmail" required class="form-control" /><br/>
+              <label for="txtEmail"  >Password:</label>
+              <input type="password"  name="txtPassword" id="txtPassword" required class="form-control" /><br/>
+              <input type="submit" value="Enviar" class="btn btn-primary form-control"/><br/>
+              
+            </form>
+
+            <button class="btn btn-info mt-3" id="btnLoginGoogle">Google</button>
+            <button class="btn btn-primary mt-3" id="btnLoginFacebook">Facebook</button>
+            <button class="btn btn-secondary mt-3" id="btnLoginGitHub">GitHub</button>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -160,15 +179,15 @@ onclick="document.getElementById('formPelicula').reset();">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Registrarse</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">❌</button>
           </div>
           <div class="modal-body">
 
             <form id="formRegistro" >
               <label for="txtEmail"  >Email:</label>
-              <input type="email"  name="txtEmail" id="txtEmail" required class="form-control" /><br/>
+              <input type="email"  name="txtEmail" id="txtEmails" required class="form-control" /><br/>
               <label for="txtEmail"  >Password:</label>
-              <input type="password"  name="txtPassword" id="txtPassword" required class="form-control" /><br/>
+              <input type="password"  name="txtPassword" id="txtPasswords" required class="form-control" /><br/>
               <input type="submit" value="Enviar" class="btn btn-primary form-control"/><br/>
 
             </form>

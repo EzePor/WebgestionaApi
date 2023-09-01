@@ -1,6 +1,10 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
+import { loginCheck } from "./loginCheck.js";
+ 
+
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -25,3 +29,9 @@ export const auth = getAuth(app);
 console.log(auth);
 
 console.log(app);
+
+onAuthStateChanged(auth, async (user)=> {
+  console.log('Hubo un cambio de estado en el login');
+  console.log(user);
+  loginCheck(user);
+})
